@@ -1,3 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+*,
+* ::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+}
 
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.titel {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  letter-spacing: 7px;
+  text-decoration: underline;
+  color: #829191;
+  padding-top: 5rem;
+  margin-left: 15rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-auto-rows: 50px;
+}
+
+.box {
+  background-color: rgba(128, 128, 128, 0.1294117647);
+  border-radius: 12.5px;
+}
+
+.notes {
+  grid-column: 2/8;
+  grid-row: 3/17;
+}
+
+.newNote {
+  grid-column: 9/16;
+  grid-row: 2/12;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2 {
+  display: flex;
+  align-self: flex-end;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 550;
+  letter-spacing: 2px;
+  margin-left: 0.5rem;
+}
+
+.noteTitle {
+  max-width: 50rem;
+  height: 2rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.462745098);
+  background-color: rgba(128, 128, 128, 0.1294117647);
+  display: flex;
+  margin-left: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.writer {
+  max-width: 50rem;
+  height: 2rem;
+  border: 0.5px solid rgba(0, 0, 0, 0.462745098);
+  background-color: rgba(128, 128, 128, 0.1294117647);
+  display: flex;
+  margin-left: 1rem;
+  border-radius: 10px;
+}
+
+.inputBox {
+  background: transparent;
+  border: 0px solid;
+  font-family: "Playfair Display", serif;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 2rem;
+  padding-left: 0.5rem;
+  margin-left: 0.1rem;
+  font-size: 1rem;
+}
+
+.note {
+  max-width: 50rem;
+  height: 20rem;
+  margin-left: 1rem;
+}
+
+.noteInput {
+  background: transparent;
+  border: 0px solid;
+  font-family: "Playfair Display", serif;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.saveBtn {
+  max-height: 2rem;
+  max-width: 4rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
 
 /*# sourceMappingURL=style.css.map */

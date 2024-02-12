@@ -1,13 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style/style.css" />
     <title>Notes</title>
   </head>
   <body>
-    <h1>Digital Notes</h1>
+    <header>
+      <h1 class="titel">Digital Notes</h1>
+    </header>
+    <main>
+      <div class="gridContainer">
+        <div class="box notes"></div>
+        <div class="box newNote">
+          <div class="noteTitle">
+            <h2>Title:</h2>
+            <input type="text" class="inputBox titleName">
+          </div>
+          <div class="writer">
+            <h2>Writer:</h2>
+            <input type="text" class="inputBox writerName">
+          </div>
+          <div class="note">
+            <input type="text" placeholder="What's on your mind?" class="noteInput">
+          </div>
+          <button class="saveBtn">POST NOTE</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
     <script type="module" src="/src/script.ts"></script>
   </body>
 </html>
