@@ -1,5 +1,5 @@
-@import "fonts";
-@import "colors";
+@import "partials/fonts";
+@import "partials/colors";
 
 @mixin h2-text-style() {
   display: flex;
@@ -28,4 +28,10 @@
   border-radius: 10px;
   width: 100%;
   height: 100%;
+
 }
+
+@mixin icon-styling (){
+
+}
+

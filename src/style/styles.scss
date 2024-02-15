@@ -1,8 +1,8 @@
 // sass --watch src/style/styles.scss:src/style/style.css
 
-@import "colors";
+@import "partials/colors";
 @import "mixins";
-@import "fonts";
+@import "partials/fonts";
 
 *,
 * ::before,
@@ -10,7 +10,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 body {
@@ -38,7 +38,7 @@ body {
   border-radius: 12.5px;
 }
 
-.notes {
+.notesContainer {
   grid-column: 2 / 8;
   grid-row: 3 / 17;
 }
@@ -67,7 +67,6 @@ h2 {
 
 .inputBox {
   @include inputBox-styling();
-  width: 100%;
   height: 2rem;
   padding-left: 0.5rem;
   margin-left: 0.1rem;
@@ -81,13 +80,33 @@ h2 {
   margin-left: 1rem;
 }
 
-.noteInput {
+.titleName {
   @include inputBox-styling();
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.5rem;
 }
 
-.saveBtn {
+.writerName {
+  @include inputBox-styling();
+  font-size: 1rem;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+}
+
+.uploadBtn {
   max-height: 2rem;
   max-width: 4rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+  border: 0px;
+  
+}
+
+.icon {
+  max-width: 100%;
+  max-height: 100%;
+  &:hover {
+    cursor: pointer;
+  }
 }

@@ -13,20 +13,26 @@
     </header>
     <main>
       <div class="gridContainer">
-        <div class="box notes"></div>
+        <div class="box notesContainer"></div>
         <div class="box newNote">
           <div class="noteTitle">
             <h2>Title:</h2>
-            <input type="text" class="inputBox titleName">
+            <input type="text" class="titleName" />
           </div>
           <div class="writer">
             <h2>Writer:</h2>
-            <input type="text" class="inputBox writerName">
+            <input type="text" class="writerName" />
           </div>
           <div class="note">
-            <input type="text" placeholder="What's on your mind?" class="noteInput">
+            <p contenteditable="true" class="noteInput"></p>
           </div>
-          <button class="saveBtn">POST NOTE</button>
+          <button class="uploadBtn">
+            <img
+              src="/src/assets/img/uploadIcon.svg"
+              alt="uploadIcon"
+              class="icon"
+            />
+          </button>
         </div>
       </div>
     </main>
