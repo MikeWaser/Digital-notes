@@ -7,6 +7,6 @@ export interface Note {
   }
   
   export interface ApiResponse {
-    data: Note[];
+    notes: Note[];
   }
   

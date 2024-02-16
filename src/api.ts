@@ -1,15 +1,16 @@
 import { Note, ApiResponse } from './interface';
 
-const BASE_URL = 'https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes';
+const baseUrl = 'https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes';
 
 export async function fetchNotesByUsername(username: string): Promise<Note[]> {
-  const response = await fetch(`${BASE_URL}/${username}`);
+  console.log({username});
+  const response = await fetch(`${baseUrl}/${username}`);
   const data: ApiResponse = await response.json();
-  return data.data;
+  return data.notes;
 }
 
 export async function addNote(note: Note): Promise<void> {
-  await fetch(BASE_URL, {
+  await fetch(baseUrl, {
     method: 'POST',
     body: JSON.stringify(note),
     headers: {
@@ -19,7 +20,7 @@ export async function addNote(note: Note): Promise<void> {
 }
 
 export async function updateNoteById(id: string, updatedNote: Partial<Note>): Promise<void> {
-  await fetch(`${BASE_URL}/${id}`, {
+  await fetch(`${baseUrl}/${id}`, {
     method: 'PUT',
     body: JSON.stringify(updatedNote),
     headers: {
@@ -29,7 +30,7 @@ export async function updateNoteById(id: string, updatedNote: Partial<Note>): Pr
 }
 
 export async function deleteNoteById(id: string): Promise<void> {
-  await fetch(`${BASE_URL}/${id}`, {
+  await fetch(`${baseUrl}/${id}`, {
     method: 'DELETE',
   });
 }

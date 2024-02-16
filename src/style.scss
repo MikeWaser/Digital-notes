@@ -4,6 +4,9 @@
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .title {
     font-size: 3rem;
@@ -99,4 +102,36 @@
 
 .fetchNotes {
   text-align: center;
+}
+
+#notes-container {
+  display: flex;
+  flex-direction: column;
+  //flex-wrap: wrap;
+  max-width: 600px;
+  margin: auto;
+  // justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.noteBox {
+    background: #87cfeb9c;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+
+.editBtn {
+    color: #546e7a;
+    cursor: pointer;
+    &:hover {
+        background-color: #455a64;
+    }
+}
+.deleteBtn {
+    color: #546e7a;
+    cursor: pointer;
+    &:hover {
+        background-color: #455a64;
+    }
 }
