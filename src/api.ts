@@ -9,8 +9,8 @@ export async function fetchNotesByUsername(username: string): Promise<Note[]> {
   return data.notes;
 }
 
-export async function addNote(note: Note): Promise<void> {
-  await fetch(baseUrl, {
+export async function addNote(note: Note): Promise<Response> {
+  return await fetch(baseUrl, {
     method: 'POST',
     body: JSON.stringify(note),
     headers: {

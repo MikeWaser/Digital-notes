@@ -1,7 +1,11 @@
-import { fetchNotesByUsername } from "./api";
-import { updateNoteById } from "./api";
-import { deleteNoteById } from "./api";
+import {
+  addNote,
+  fetchNotesByUsername,
+  updateNoteById,
+  deleteNoteById,
+} from "./api";
 
+/* 
 // Skicka POST-förfrågan för att lägga till en anteckning
 const newNote = {
   username: "maiqen",
@@ -23,7 +27,51 @@ let postResponse = await fetch(
 // Konvertera svaret till JSON-format och konsollogga det
 let postResult = await postResponse.json();
 console.log("POST Response:", postResult);
+ */
 
+document.querySelector(".saveBtn")?.addEventListener("click", async () => {
+  try {
+    // Hämta värdena från input-fälten
+    const userInput: HTMLInputElement = document.getElementById(
+        "note-user"
+      ) as HTMLInputElement;
+    const titleInput: HTMLInputElement = document.getElementById(
+      "note-title"
+    ) as HTMLInputElement;
+    const contentInput: HTMLTextAreaElement = document.getElementById(
+      "note-content"
+    ) as HTMLTextAreaElement;
+   
+    // Skapa en ny anteckning baserad på Note-interfacet och input-fälten
+    const newNote: Note = {
+      username: userInput.value,
+      title: titleInput.value,
+      note: contentInput.value,
+    };
+
+    // Skicka en POST-förfrågan för att lägga till den nya anteckningen
+    const response = await addNote(newNote);
+    if (response.ok) {
+        console.log('Ny anteckning lagd!');
+    } else {
+        console.error('failed to add note. Status:', response.status);
+        
+    }
+
+    // Konvertera svaret till JSON-format
+    let result = await response.json();
+    console.log("New note created:", result);
+
+    // Om det krävs, gör något med det nya anteckningens resultat här
+
+    // Återställ input-fälten efter att anteckningen har skickats
+    titleInput.value = "";
+    contentInput.value = "";
+    userInput.value = "";
+  } catch (error) {
+    console.error("Error creating note:", error);
+  }
+});
 
 // Hämta användarens anteckningar
 let fetchResponse = await fetch(
@@ -32,7 +80,7 @@ let fetchResponse = await fetch(
 
 // Konvertera svaret till JSON-format och konsollogga det
 let fetchResult = await fetchResponse.json();
-console.log("Fetch Response:", fetchResult); 
+console.log("Fetch Response:", fetchResult);
 
 // Händelselyssnare för knappen
 document
@@ -54,7 +102,7 @@ document
         const noteElement = document.createElement("div");
         noteElement.classList.add("note");
         noteElement.setAttribute("id", `note-${note.id}`); // Lägg till ett unikt ID baserat på anteckningens ID från API:en
-    
+
         // Skapa innehållet för varje anteckningselement
         noteElement.innerHTML = `
             <h3>${note.title}</h3>
@@ -63,31 +111,31 @@ document
             <button class = "editBtn">EDIT</button>
             <button class="deleteBtn" data-note-id="${note.id}">&#x2715</button>
         `;
-    
+
         // Lägg till händelselyssnare för raderingsknapparna
-        document.addEventListener("click", async function(event) {
-            if (event.target.classList.contains("deleteBtn")) {
-                const noteId = event.target.getAttribute("data-note-id"); // Hämta anteckningens ID från data-attributet
-        
-                try {
-                    // Anropa deleteNoteById-funktionen för att radera anteckningen från servern
-                    await deleteNoteById(noteId);
-                    console.log(`Note with ID ${noteId} deleted successfully.`);
-                    
-                    // Ta bort anteckningselementet från DOM:en
-                    const noteElement = event.target.closest(".note");
-                    if (noteElement) {
-                        noteElement.remove();
-                    }
-                } catch (error) {
-                    console.error("Error deleting note:", error);
-                }
+        document.addEventListener("click", async function (event) {
+          if (event.target.classList.contains("deleteBtn")) {
+            const noteId = event.target.getAttribute("data-note-id"); // Hämta anteckningens ID från data-attributet
+
+            try {
+              // Anropa deleteNoteById-funktionen för att radera anteckningen från servern
+              await deleteNoteById(noteId);
+              console.log(`Note with ID ${noteId} deleted successfully.`);
+
+              // Ta bort anteckningselementet från DOM:en
+              const noteElement = event.target.closest(".note");
+              if (noteElement) {
+                noteElement.remove();
+              }
+            } catch (error) {
+              console.error("Error deleting note:", error);
             }
+          }
         });
-    
+
         // Lägg till anteckningselementet till DOM:en
         document.getElementById("notes-container")?.appendChild(noteElement);
-    });
+      });
       /* 
       notes.forEach((note) => {
         const noteElement = document.createElement("div");
@@ -108,7 +156,22 @@ document
     }
   });
 
-  
+/* const updateNote = {
+  note: "Detta är min uppdaterade text",
+};
+
+let response = await fetch(
+  "https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/21312dadad",
+  {
+    method: "PUT",
+    body: JSON.stringify(updateNote), // Gör om till ett JSON objekt
+    headers: {
+      "Content-Type": "application/json", // Berätta för servern att det vi skickar med är ett JSON objekt
+    },
+  }
+); // Det sista är ett unikt id som är kopplat till en anteckning
+console.log(updateNote); */
+
 /* import { Note, ApiResponse } from "./interface";
 
 async function fetchNoteById(id: string): Promise<Note> {
