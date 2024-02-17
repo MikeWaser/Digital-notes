@@ -6,40 +6,6 @@ import {
 } from "./api";
 import { Note } from "./interface";
 
-/* post test
-// Skicka POST-förfrågan för att lägga till en anteckning
-const newNote = {
-  username: "maiqen",
-  title: "Första anteckningen",
-  note: "Min första anteckning",
-};
-
-let postResponse = await fetch(
-  "https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes",
-  {
-    method: "POST",
-    body: JSON.stringify(newNote),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }
-);
-
-// Konvertera svaret till JSON-format och konsollogga det
-let postResult = await postResponse.json();
-console.log("POST Response:", postResult);
-
-/* // Hämta användarens anteckningar
-let fetchResponse = await fetch(
-  "https://o6wl0z7avc.execute-api.eu-north-1.amazonaws.com/api/notes/maiqen"
-);
-
-// Konvertera svaret till JSON-format och konsollogga det
-let fetchResult = await fetchResponse.json();
-console.log("Fetch Response:", fetchResult); 
-
- */
-
 document.querySelector(".saveBtn")?.addEventListener("click", async (event) => {
   try {
     // Hämta värdena från input-fälten
