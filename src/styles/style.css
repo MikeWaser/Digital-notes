@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+.noteContainer {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.noteContainer .title {
+  margin-bottom: 5rem;
+  text-decoration: underline;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  letter-spacing: 7px;
+  text-decoration: underline;
+  color: #829191;
+}
+.noteContainer h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 550;
+  letter-spacing: 2px;
+  color: #4C5B61;
+}
+.noteContainer form {
+  margin-bottom: 20px;
+}
+.noteContainer form input[type=text],
+.noteContainer form textarea {
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  font-size: 1.2rem;
+  background-color: rgba(128, 128, 128, 0.1294117647);
+}
+.noteContainer form textarea {
+  height: 100px;
+  max-width: 800px;
+}
+.noteContainer form button {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  width: 50%;
+  padding: 0.5rem;
+  background-color: #829191;
+  color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+}
+.noteContainer form button:hover {
+  background-color: #4C5B61;
+}
+
+.fetchNotes {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#fetch-notes-btn {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  border: 1px solid #9AA09C;
+}
+#fetch-notes-btn:hover {
+  cursor: pointer;
+  background-color: #cccccc;
+}
+
+#notes-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.note {
+  border-radius: 5px;
+  background: #cccccc;
+  margin: 0.5rem;
+  padding: 0 0 1rem 1rem;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  font-size: 1rem;
+}
+
+button {
+  color: #4C5B61;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+button:hover {
+  background-color: #9AA09C;
+}
+
+/*# sourceMappingURL=style.css.map */

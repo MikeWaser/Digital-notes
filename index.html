@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Notes</title>
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
-    <div class="add">
+    <div class="noteContainer">
         <h1 class="title">Digital Notes</h1>
-        <h2>Add a new note:</h2>
+        <h2>New note</h2>
         <form id="newNote">
             <input type="hidden" id="note-id">
             <div class="form-group">
@@ -34,39 +34,6 @@
       </div>
         <div id="notes-container"></div>
     </div>
-    <script type="module" src="src/main.ts"></script>
+    <script type="module" src="src/scripts/main.ts"></script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes App</title>
-    <link rel="stylesheet" href="styles.scss">
-</head>
-<body>
-    <div class="container">
-        <h1>Notes App</h1>
-        <form id="user-name-form">
-            <label for="user-name-input">User:</label>
-            <input type="text" id="user-name-input" name="user-name-input" required>
-            <button type="submit">Enter</button>
-        </form>
-        <form id="note-form" hidden>
-            <input type="hidden" id="note-id">
-            <label for="note-user">User:</label>
-            <input type="text" id="note-user" name="note-user" value="" required>
-            <label for="note-title">Title:</label>
-            <input type="text" id="note-title" name="note-title" value="" required>
-            <label for="note-content">Note:</label>
-            <textarea id="note-content" name="note-content" value="" required></textarea>
-            <button type="submit">Save Note</button>
-            <button type="button" onclick="clearNoteForm()">Clear</button>
-        </form>
-        <div id="notes-container"></div>
-    </div>
-    <script src="main.ts"></script>
-</body>
-</html> -->

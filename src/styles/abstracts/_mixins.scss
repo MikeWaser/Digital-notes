@@ -1,0 +1,19 @@
+@import "variables";
+@import "fonts";
+
+@mixin h2-text-style() {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 550;
+    letter-spacing: 2px;
+    color: $color-primary-outer-space;
+  }
+
+  @mixin text-base (){
+    font-family: "Playfair Display", serif;
+    letter-spacing: 1px;
+  }
+
+  @mixin border-radius (){
+    border-radius: 5px;
+  }

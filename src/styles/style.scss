@@ -1,0 +1,118 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/fonts";
+
+.noteContainer {
+  @include text-base;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title {
+    margin-bottom: 5rem;
+    text-decoration: underline;
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    letter-spacing: 7px;
+    text-decoration: underline;
+    color: $color-primary-battleship-grey;
+  }
+
+  h2 {
+    @include h2-text-style();
+  }
+
+  form {
+    margin-bottom: 20px;
+
+    input[type="text"],
+    textarea {
+      @include border-radius;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      font-size: 1.2rem;
+      background-color: $color-primary-grey;
+    }
+
+    textarea {
+      height: 100px;
+      max-width: 800px;
+    }
+
+    button {
+      @include text-base;
+      @include border-radius;
+      font-size: 1.4rem;
+      width: 50%;
+      padding: 0.5rem;
+      background-color: $color-primary-battleship-grey;
+      color: $color-button;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary-outer-space;
+      }
+    }
+  }
+}
+
+.fetchNotes {
+  @include text-base;
+  text-align: center;
+}
+
+#usernameInput {
+  
+}
+
+#fetch-notes-btn {
+  @include text-base;
+  @include border-radius;
+  border: 1px solid $color-primary-cadet-grey;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-primary-silver;
+  }
+}
+
+#notes-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.note {
+  @include border-radius;
+  background: $color-primary-silver;
+  margin: 0.5rem;
+  padding: 0 0 1rem 1rem;
+}
+
+h3 {
+  @include text-base;
+  font-size: 1.3rem;
+}
+
+p {
+  @include text-base;
+  font-size: 1rem;
+}
+
+button {
+  color: $color-primary-outer-space;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  &:hover {
+    background-color: $color-primary-cadet-grey;
+  }
+}
